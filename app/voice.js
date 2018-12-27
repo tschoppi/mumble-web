@@ -161,15 +161,6 @@ export class VADVoiceHandler extends VoiceHandler {
 var theUserMedia = null
 
 export function initVoice (onData, onUserMediaError) {
-  getUserMedia({ audio: true }, (err, userMedia) => {
-    if (err) {
-      onUserMediaError(err)
-    } else {
-      theUserMedia = userMedia
-      var micStream = new MicrophoneStream(userMedia, { objectMode: true, bufferSize: 1024 })
-      micStream.on('data', data => {
-        onData(Buffer.from(data.getChannelData(0).buffer))
-      })
-    }
-  })
+  // Do nothing
+  return
 }
