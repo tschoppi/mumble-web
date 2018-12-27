@@ -4,6 +4,16 @@
 
 let config = window.mumbleWebConfig // eslint-disable-line no-unused-vars
 
-// E.g. changing default address and theme:
-// config.defaults.address = 'voice.example.com'
-// config.defaults.theme = 'MetroMumbleDark'
+// Disable all fields in the 'Connect to Server' dialog
+config.connectDialog = {
+  'address': false,
+  'port': false,
+  'token': false,
+  'username': false,
+  'password': false
+}
+
+config.settings.showAvatars = 'never'
+
+// Set voiceMode to something illegal (not sure if this is needed)
+config.settings.voiceMode = 'none'
